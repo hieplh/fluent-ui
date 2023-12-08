@@ -1,0 +1,15 @@
+{
+    "baseUrl": "https://MYSTQA.test.apps.engineering.fluentcommerce.com",
+    "viewportWidth": 1400,
+    "viewportHeight": 800,
+    "videoUploadOnPasses": false,
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": {
+        "reportDir": "cypress/report",
+        "charts": true,
+        "reportPageTitle": "CypressReportOfTestConsole",
+        "reportFilename": "TestConsoleReport",
+        "timestamp": "mmddyyyy_HHMMss",
+        "overwrite": true
+    }
+}

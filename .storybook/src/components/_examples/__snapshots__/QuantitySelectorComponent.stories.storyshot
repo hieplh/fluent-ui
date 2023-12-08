@@ -1,0 +1,703 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Fluent Plugin/List/Sub Components/Column Components/Quantity Selector (Component ver.) Bounded 1`] = `
+<div
+  className="MuiBox-root MuiBox-root makeStyles-container"
+>
+  <div
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": "14px",
+        "marginBottom": "8px",
+      }
+    }
+  >
+    QuantitySelectorComponent label
+  </div>
+  <div
+    aria-label="small outlined button group"
+    className="MuiButtonGroup-root css-1qosk5f-NJt"
+    data-testid="quantitySelector"
+    role="group"
+    style={
+      Object {
+        "display": "flex",
+        "fontSize": "16px",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall MuiButton-disabled MuiButtonBase-disabled"
+      data-testid="quantitySelector_button--minusButton"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "15px 0 0 15px",
+        }
+      }
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 11h14v2H5z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="QuantitySelectorComponent label"
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined css-obqgcv-NJt MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      disabled={false}
+      name="QuantitySelectorComponent"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline WithStyles(ForwardRef(Input))-root css-4trl10-NJt"
+          data-testid="quantitySelector_input"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input MuiInput-input"
+            id=""
+            name="QuantitySelectorComponent"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            pattern="\\\\d*"
+            type="number"
+            value={0}
+          />
+        </div>
+        <div
+          className="makeStyles-pickerText css-914mag"
+          data-testid="QuantitySelector_InnerText"
+        >
+          0
+        </div>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="plus_button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "0 15px 15px 0",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Fluent Plugin/List/Sub Components/Column Components/Quantity Selector (Component ver.) Default 1`] = `
+<div
+  className="MuiBox-root MuiBox-root makeStyles-container"
+>
+  <div
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": "14px",
+        "marginBottom": "8px",
+      }
+    }
+  >
+    QuantitySelectorComponent label
+  </div>
+  <div
+    aria-label="small outlined button group"
+    className="MuiButtonGroup-root css-1qosk5f-NJt"
+    data-testid="quantitySelector"
+    role="group"
+    style={
+      Object {
+        "display": "flex",
+        "fontSize": "16px",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="quantitySelector_button--minusButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "15px 0 0 15px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 11h14v2H5z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="QuantitySelectorComponent label"
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined css-obqgcv-NJt MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      disabled={false}
+      name="QuantitySelectorComponent"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline WithStyles(ForwardRef(Input))-root css-4trl10-NJt"
+          data-testid="quantitySelector_input"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input MuiInput-input"
+            name="QuantitySelectorComponent"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            pattern="\\\\d*"
+            type="number"
+            value={0}
+          />
+        </div>
+        <div
+          className="makeStyles-pickerText css-914mag"
+          data-testid="QuantitySelector_InnerText"
+        >
+          0
+        </div>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="plus_button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "0 15px 15px 0",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Fluent Plugin/List/Sub Components/Column Components/Quantity Selector (Component ver.) Inner Text 1`] = `
+<div
+  className="MuiBox-root MuiBox-root makeStyles-container"
+>
+  <div
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": "14px",
+        "marginBottom": "8px",
+      }
+    }
+  >
+    QuantitySelectorComponent label
+  </div>
+  <div
+    aria-label="small outlined button group"
+    className="MuiButtonGroup-root css-1qosk5f-NJt"
+    data-testid="quantitySelector"
+    role="group"
+    style={
+      Object {
+        "display": "flex",
+        "fontSize": "16px",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="quantitySelector_button--minusButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "15px 0 0 15px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 11h14v2H5z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="QuantitySelectorComponent label"
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined css-obqgcv-NJt MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      disabled={false}
+      name="QuantitySelectorComponent"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline WithStyles(ForwardRef(Input))-root css-cfc8n8-NJt"
+          data-testid="quantitySelector_input"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input MuiInput-input"
+            id=""
+            name="QuantitySelectorComponent"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            pattern="\\\\d*"
+            type="number"
+            value={0}
+          />
+        </div>
+        <div
+          className="makeStyles-pickerText css-1buo0wy"
+          data-testid="QuantitySelector_InnerText"
+        >
+          <span>
+            0
+             
+          </span>
+          <span
+            className=" makeStyles-pickerTextColour makeStyles-pickerTextColour none"
+          >
+            of 10
+          </span>
+        </div>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="plus_button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "0 15px 15px 0",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Fluent Plugin/List/Sub Components/Column Components/Quantity Selector (Component ver.) Invalid Data 1`] = `
+<div
+  className="MuiBox-root MuiBox-root makeStyles-container"
+>
+  <div
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": "14px",
+        "marginBottom": "8px",
+      }
+    }
+  >
+    QuantitySelectorComponent label
+  </div>
+  <div
+    aria-label="small outlined button group"
+    className="MuiButtonGroup-root css-1qosk5f-NJt"
+    data-testid="quantitySelector"
+    role="group"
+    style={
+      Object {
+        "display": "flex",
+        "fontSize": "16px",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="quantitySelector_button--minusButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "15px 0 0 15px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 11h14v2H5z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="QuantitySelectorComponent label"
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined css-obqgcv-NJt MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      disabled={false}
+      name="QuantitySelectorComponent"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline WithStyles(ForwardRef(Input))-root css-4trl10-NJt"
+          data-testid="quantitySelector_input"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input MuiInput-input"
+            name="QuantitySelectorComponent"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            pattern="\\\\d*"
+            type="number"
+            value={0}
+          />
+        </div>
+        <div
+          className="makeStyles-pickerText css-914mag"
+          data-testid="QuantitySelector_InnerText"
+        >
+          0
+        </div>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined WithStyles(ForwardRef(Button))-root WithStyles(ForwardRef(Button))-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid="plus_button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": "0 15px 15px 0",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;

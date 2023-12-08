@@ -1,0 +1,53 @@
+{
+	"compilerOptions": {
+		// Target es5 for IE9/10
+		"target": "es5",
+		// path to output directory
+		"outDir": "./dist/",
+		// enable strict null checks as a best practice
+		"strictNullChecks": true,
+		// Search under node_modules for non-relative imports.
+		"moduleResolution": "node",
+		// Enable importing of JSON files
+		"resolveJsonModule": true,		
+		// Process & infer types from .js files.
+		"allowJs": true,
+		// Don't emit; allow Babel to transform files.
+		"noEmit": true,
+		// Enable strictest settings like strictNullChecks & noImplicitAny.
+		"strict": true,
+		// Import non-ES modules as default imports.
+		"esModuleInterop": true,
+		// use typescript to transpile jsx to js
+		"jsx": "react-jsx",
+		"baseUrl": "./src",
+		"lib": [
+			"es2015",
+			"dom.iterable",
+			"es2016.array.include",
+			"es2017.object",
+			"dom"
+        ],
+		"types": ["node", "jest", "@testing-library/jest-dom", "@emotion/core"],
+        "typeRoots" : ["./node_modules/@types", "./@types/**/*"],
+		"module": "es6",
+		"removeComments": true,
+		"alwaysStrict": true,
+		"allowUnreachableCode": false,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true
+    },
+	"include": ["src/**/*", "manifests/**/*", "@types/**/*", "./@types"],
+	"exclude": [
+		"node_modules",
+		"./node_modules",
+		"./node_modules/*",
+		"./node_modules/@types/node/index.d.ts"
+	]
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--test-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React TypeScript Boilerplate</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+
+    <style>
+        body {
+            display:flex; flex-direction: column; align-items: center; justify-content: center; background-color:#efefef;
+            font-family: 'Lato', sans-serif; font-size: 16px; line-height:1.6;
+        }
+        #root { width: 600px; max-width:90%; padding: 4em 2em 2em 2em; }
+        p { font-size:20px; }
+        a, a:visited { color:#552AA8; text-decoration: none; }
+        pre { color: #666; }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <p>Welcome to the Fluent OMX component SDK!</p>
+        <p>This plugin can be added to your Fluent OMX web app by adding the following to the top of the base manifest:</p>
+        <pre>
+            {
+               "plugins":[
+                  {
+                    "type": "url",
+                    "src":"http://localhost:3001"
+                  }
+               ],
+               "routes":[
+                  {
+                    "type": "page",
+                    "path":"hello",
+                    "component":"fc.hello"
+                  }
+               ]
+            }
+        </pre>
+        <p>More details can be found on <a href="https://lingo.fluentcommerce.com/extend/component-sdk/getting-started/">Lingo</a></p>
+    </div>
+</body>
+</html>

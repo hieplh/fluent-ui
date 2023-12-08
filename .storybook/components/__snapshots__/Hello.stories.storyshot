@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Hello Default 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12"
+>
+  <div
+    className="MuiPaper-root MuiCard-root makeStyles-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="makeStyles-highlight-3 makeStyles-highlight-5"
+    >
+      <div
+        className="makeStyles-titleContent-6"
+      >
+        <h2
+          className="MuiTypography-root MuiTypography-h5"
+        >
+          Hello World
+        </h2>
+      </div>
+      <div
+        className="makeStyles-paddedContent-7"
+      >
+        <p
+          data-testid="hello-content"
+        >
+          Storybook Example
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
