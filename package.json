@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "bundle": "webpack",
-    "test": "jest --coverage --testPathIgnorePatterns ./build/**",
+    "test": "jest --coverage --testPathIgnorePatterns ./build/*",
     "test:storybook": "start-storybook --smoke-test",
-    "test:bail": "jest --bail --testPathIgnorePatterns ./build/**",
+    "test:bail": "jest --bail --testPathIgnorePatterns ./build/*",
     "start": "webpack serve --mode development --open --hot --port 3001",
     "build": "webpack --mode production && jest ./build",
     "check-types": "tsc",
