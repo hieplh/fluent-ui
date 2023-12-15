@@ -1,13 +1,13 @@
 import { ComponentMeta } from '@storybook/react';
 import { storyTemplate } from '../../../../.storybook/helpers';
-import { Orders as OrdersDTO, PageInfo } from './OrdersDTO';
-import { Filter, OrderContent, Pagination } from './OrdersLayout';
+import { Analytic } from './Analytics';
+import { Orders } from 'components/v2/ordermanagement/OrdersDTO';
 
 export default {
-  title: 'Components/OrderLayout',
-  component: OrderContent,
-} as ComponentMeta<typeof OrderContent>;
-const template = storyTemplate(OrderContent);
+  title: 'Components/Dashboard/Analytics',
+  component: Analytic,
+} as ComponentMeta<typeof Analytic>;
+const template = storyTemplate(Analytic);
 
 const edges = [
   {
@@ -193,22 +193,9 @@ const edges = [
 ];
 
 export const Default = template({
-  orders: {edges: edges} as OrdersDTO,
-});
-
-export const FilterLayout = storyTemplate(Filter)({
-  filterRefs: '',
-  filterStatus: [],
-  filterType: [],
-  submitFilter: (props: any) => console.log('submitFilter', props),
-  resetFilter: () => console.log('resetFilter'),
-});
-
-export const PaginationLayout = storyTemplate(Pagination)({
-  page: 0,
-  rowsPerPage: 25,
-  disableNextButton: false,
-  disablePreviousButton: true,
-  onPageChange: (event: unknown, newPage: number) => console.log('newPage', newPage),
-  onRowsPerPageChange: () => {},
+  orders: {
+    today: edges,
+    week: {edges: edges} as Orders,
+    month: edges,
+  },
 });

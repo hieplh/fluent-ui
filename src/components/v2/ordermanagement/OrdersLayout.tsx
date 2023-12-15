@@ -11,7 +11,10 @@ import {
 } from '@mui/material';
 import { darken, lighten, styled } from '@mui/material/styles';
 import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
+import { currencyFormat } from '../../../utils/NumberUtils';
+import * as LocaleCurrency from 'locale-currency';
 import moment from 'moment';
+import { useI18n } from 'mystique/hooks/useI18n';
 import * as React from 'react';
 
 const getBackgroundColor = (color: string, mode: string) =>
@@ -26,104 +29,80 @@ const getSelectedBackgroundColor = (color: string, mode: string) =>
 const getSelectedHoverBackgroundColor = (color: string, mode: string) =>
   mode === 'dark' ? darken(color, 0.4) : lighten(color, 0.4);
 
-const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
-  '& .super-app-theme--CREATED': {
-    backgroundColor: getBackgroundColor(
-      theme.palette.info.main,
-      theme.palette.mode
-    ),
-    '&:hover': {
-      backgroundColor: getHoverBackgroundColor(
-        theme.palette.info.main,
-        theme.palette.mode
-      ),
+const columns = (props?: any): GridColDef[] => {
+  return [
+    {
+      field: 'Id',
+      hideable: false,
+      flex: 1,
+      valueGetter: (params) => params.row.node?.id ?? '',
     },
-    '&.Mui-selected': {
-      backgroundColor: getSelectedBackgroundColor(
-        theme.palette.info.main,
-        theme.palette.mode
-      ),
-      '&:hover': {
-        backgroundColor: getSelectedHoverBackgroundColor(
-          theme.palette.info.main,
-          theme.palette.mode
-        ),
+    {
+      field: 'ref',
+      headerName: 'Ref',
+      flex: 1,
+      valueGetter: (params) => params.row.node?.ref ?? '',
+    },
+    {
+      field: 'Customer',
+      headerName: 'Customer',
+      flex: 1,
+      valueGetter: (params) =>
+        params.row.node
+          ? params.row.node.customer.firstName +
+            ' ' +
+            params.row.node.customer.lastName
+          : '',
+    },
+    {
+      field: 'type',
+      headerName: 'Type',
+      headerClassName: 'align: center',
+      flex: 0.5,
+      headerAlign: 'center',
+      align: 'center',
+      valueGetter: (params) => params.row.node?.type ?? '',
+    },
+    {
+      field: 'status',
+      headerName: 'Status',
+      flex: 1,
+      headerAlign: 'center',
+      align: 'center',
+      valueGetter: (params) => params.row.node?.status ?? '',
+    },
+    {
+      field: 'totalPrice',
+      headerName: 'Total Price',
+      flex: 1,
+      type: 'number',
+      valueGetter: (params) => {
+        const locale = props?.locale ?? 'sv';
+        const currency = props?.currency ?? 'USD';
+        return currencyFormat(params.row.node?.totalPrice ?? -1, locale, currency);
       },
     },
-  },
-  '& .super-app-theme--RECEIVED': {
-    backgroundColor: getBackgroundColor(
-      theme.palette.success.main,
-      theme.palette.mode
-    ),
-    '&:hover': {
-      backgroundColor: getHoverBackgroundColor(
-        theme.palette.success.main,
-        theme.palette.mode
-      ),
+    {
+      field: 'createdOn',
+      headerName: 'Created On',
+      flex: 2,
+      valueGetter: (params) =>
+        params.row.node
+          ? Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          }).format(new Date(params.row.node.createdOn)) +
+            ' (' +
+            moment(params.row.node.createdOn).fromNow() +
+            ')'
+          : '',
     },
-    '&.Mui-selected': {
-      backgroundColor: getSelectedBackgroundColor(
-        theme.palette.success.main,
-        theme.palette.mode
-      ),
-      '&:hover': {
-        backgroundColor: getSelectedHoverBackgroundColor(
-          theme.palette.success.main,
-          theme.palette.mode
-        ),
-      },
-    },
-  },
-  '& .super-app-theme--BOOKED': {
-    backgroundColor: getBackgroundColor(
-      theme.palette.warning.main,
-      theme.palette.mode
-    ),
-    '&:hover': {
-      backgroundColor: getHoverBackgroundColor(
-        theme.palette.warning.main,
-        theme.palette.mode
-      ),
-    },
-    '&.Mui-selected': {
-      backgroundColor: getSelectedBackgroundColor(
-        theme.palette.warning.main,
-        theme.palette.mode
-      ),
-      '&:hover': {
-        backgroundColor: getSelectedHoverBackgroundColor(
-          theme.palette.warning.main,
-          theme.palette.mode
-        ),
-      },
-    },
-  },
-  '& .super-app-theme--COMPLETE': {
-    backgroundColor: getBackgroundColor(
-      theme.palette.error.main,
-      theme.palette.mode
-    ),
-    '&:hover': {
-      backgroundColor: getHoverBackgroundColor(
-        theme.palette.error.main,
-        theme.palette.mode
-      ),
-    },
-    '&.Mui-selected': {
-      backgroundColor: getSelectedBackgroundColor(
-        theme.palette.error.main,
-        theme.palette.mode
-      ),
-      '&:hover': {
-        backgroundColor: getSelectedHoverBackgroundColor(
-          theme.palette.error.main,
-          theme.palette.mode
-        ),
-      },
-    },
-  },
-}));
+  ];
+};
 
 const StyledGridOverlay = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -197,74 +176,104 @@ const CustomNoRowsOverlay = () => {
   );
 };
 
-const columns: GridColDef[] = [
-  {
-    field: 'Id',
-    hideable: false,
-    flex: 1,
-    valueGetter: (params) => params.row.node?.id ?? '',
+export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
+  '& .super-app-theme--CREATED': {
+    backgroundColor: getBackgroundColor(
+      theme.palette.info.main,
+      theme.palette.mode,
+    ),
+    '&:hover': {
+      backgroundColor: getHoverBackgroundColor(
+        theme.palette.info.main,
+        theme.palette.mode,
+      ),
+    },
+    '&.Mui-selected': {
+      backgroundColor: getSelectedBackgroundColor(
+        theme.palette.info.main,
+        theme.palette.mode,
+      ),
+      '&:hover': {
+        backgroundColor: getSelectedHoverBackgroundColor(
+          theme.palette.info.main,
+          theme.palette.mode,
+        ),
+      },
+    },
   },
-  {
-    field: 'ref',
-    headerName: 'Ref',
-    flex: 1,
-    valueGetter: (params) => params.row.node?.ref ?? '',
+  '& .super-app-theme--RECEIVED': {
+    backgroundColor: getBackgroundColor(
+      theme.palette.success.main,
+      theme.palette.mode,
+    ),
+    '&:hover': {
+      backgroundColor: getHoverBackgroundColor(
+        theme.palette.success.main,
+        theme.palette.mode,
+      ),
+    },
+    '&.Mui-selected': {
+      backgroundColor: getSelectedBackgroundColor(
+        theme.palette.success.main,
+        theme.palette.mode,
+      ),
+      '&:hover': {
+        backgroundColor: getSelectedHoverBackgroundColor(
+          theme.palette.success.main,
+          theme.palette.mode,
+        ),
+      },
+    },
   },
-  {
-    field: 'Customer',
-    headerName: 'Customer',
-    flex: 1,
-    valueGetter: (params) =>
-      params.row.node
-        ? params.row.node.customer.firstName +
-          ' ' +
-          params.row.node.customer.lastName
-        : '',
+  '& .super-app-theme--BOOKED': {
+    backgroundColor: getBackgroundColor(
+      theme.palette.warning.main,
+      theme.palette.mode,
+    ),
+    '&:hover': {
+      backgroundColor: getHoverBackgroundColor(
+        theme.palette.warning.main,
+        theme.palette.mode,
+      ),
+    },
+    '&.Mui-selected': {
+      backgroundColor: getSelectedBackgroundColor(
+        theme.palette.warning.main,
+        theme.palette.mode,
+      ),
+      '&:hover': {
+        backgroundColor: getSelectedHoverBackgroundColor(
+          theme.palette.warning.main,
+          theme.palette.mode,
+        ),
+      },
+    },
   },
-  {
-    field: 'type',
-    headerName: 'Type',
-    headerClassName: 'align: center',
-    flex: 0.5,
-    headerAlign: 'center',
-    align: 'center',
-    valueGetter: (params) => params.row.node?.type ?? '',
+  '& .super-app-theme--COMPLETE': {
+    backgroundColor: getBackgroundColor(
+      theme.palette.error.main,
+      theme.palette.mode,
+    ),
+    '&:hover': {
+      backgroundColor: getHoverBackgroundColor(
+        theme.palette.error.main,
+        theme.palette.mode,
+      ),
+    },
+    '&.Mui-selected': {
+      backgroundColor: getSelectedBackgroundColor(
+        theme.palette.error.main,
+        theme.palette.mode,
+      ),
+      '&:hover': {
+        backgroundColor: getSelectedHoverBackgroundColor(
+          theme.palette.error.main,
+          theme.palette.mode,
+        ),
+      },
+    },
   },
-  {
-    field: 'status',
-    headerName: 'Status',
-    flex: 1,
-    headerAlign: 'center',
-    align: 'center',
-    valueGetter: (params) => params.row.node?.status ?? '',
-  },
-  {
-    field: 'totalPrice',
-    headerName: 'Total Price',
-    flex: 1,
-    type: 'number',
-    valueGetter: (params) => params.row.node?.totalPrice ?? -1,
-  },
-  {
-    field: 'createdOn',
-    headerName: 'Created On',
-    flex: 2,
-    valueGetter: (params) =>
-      params.row.node
-        ? Intl.DateTimeFormat('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-          }).format(new Date(params.row.node.createdOn)) +
-          ' (' +
-          moment(params.row.node.createdOn).fromNow() +
-          ')'
-        : '',
-  },
-];
+}));
 
 export const Pagination: React.FC<{
   page: number;
@@ -425,72 +434,27 @@ export const Filter: React.FC<{
   );
 };
 
-export const OrderLayout: React.FC<any> = (props: any) => {
+export const OrderContent: React.FC<any> = (props: any) => {
+  const locale = useI18n().language.current ?? 'sv';
+  const currency = LocaleCurrency.getCurrency(locale);
   return (
-    <Stack
-      width='100%'
-      bgcolor={'whitesmoke'}
-      boxShadow={2}
-      borderRadius={1}
-      margin={'0.5em'}
-    >
-      <Stack
-        direction={'row'}
-        justifyContent={'space-between'}
-        justifyItems={'baseline'}
-      >
-        <Filter
-          filterRefs={props.filterRefs}
-          filterStatus={props.filterStatus}
-          filterType={props.filterType}
-          submitFilter={props.submitFilter}
-          resetFilter={props.resetFilter}
-        />
-
-        <Stack spacing={1} margin={'auto'}>
-          <Button
-            variant='contained'
-            onClick={props.updateOrder}
-          >
-            Update
-          </Button>
-        </Stack>
-
-        <Pagination
-          page={props.page}
-          rowsPerPage={props.rowsPerPage ?? 10}
-          disableNextButton={props.disableNextButton ?? false}
-          disablePreviousButton={props.disablePreviousButton ?? true}
-          onPageChange={props.onPageChange ?? (() => {})}
-          onRowsPerPageChange={props.onRowsPerPageChange ?? (() => {})}
-        />
-      </Stack>
-      <StyledDataGrid
-        getRowId={(row) => row.node?.id ?? Math.random() * 1000}
-        rows={props.edges}
-        columns={columns}
-        slots={{
-          toolbar: GridToolbar,
-          noRowsOverlay: CustomNoRowsOverlay,
-          noResultsOverlay: CustomNoRowsOverlay,
-        }}
-        autoHeight
-        rowSelection={false}
-        hideFooter
-        ignoreDiacritics
-        sx={{ '--DataGrid-overlayHeight': '300px' }}
-        getRowClassName={(params) =>
-          `super-app-theme--${params.row.node?.status ?? ''}`
-        }
-      />
-      <Pagination
-        page={props.page}
-        rowsPerPage={props.rowsPerPage}
-        disableNextButton={props.disableNextButton}
-        disablePreviousButton={props.disablePreviousButton}
-        onPageChange={props.onPageChange}
-        onRowsPerPageChange={props.onRowsPerPageChange}
-      />
-    </Stack>
+    <StyledDataGrid
+      getRowId={(row) => row.node?.id ?? Math.random() * 1000}
+      rows={props.orders.edges ?? []}
+      columns={columns({locale, currency})}
+      slots={{
+        toolbar: GridToolbar,
+        noRowsOverlay: CustomNoRowsOverlay,
+        noResultsOverlay: CustomNoRowsOverlay,
+      }}
+      autoHeight
+      rowSelection={false}
+      hideFooter={props.hideFooter ?? true}
+      ignoreDiacritics
+      sx={{ '--DataGrid-overlayHeight': '300px' }}
+      getRowClassName={(params) =>
+        `super-app-theme--${params.row.node?.status ?? ''}`
+      }
+    />
   );
 };

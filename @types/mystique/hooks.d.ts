@@ -170,6 +170,10 @@ declare module 'mystique/hooks/useEnv' {
           * The current app name
           */
          app: string
+         /**
+          * The current api url
+          */
+         api: string
     }
 }
 

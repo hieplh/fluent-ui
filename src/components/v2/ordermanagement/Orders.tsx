@@ -1,15 +1,13 @@
+import { Button, Stack } from '@mui/material';
 import { useData } from 'mystique/hooks/useData';
+import { useEnv } from 'mystique/hooks/useEnv';
 import { Orders as OrdersDTO } from './OrdersDTO';
-import { OrderLayout } from './OrdersLayout';
+import { Filter, OrderContent, Pagination } from './OrdersLayout';
 
-export interface Props {
-  orders?: OrdersDTO;
-}
-
-export const Orders: React.FC<Props> = (props: Props) => {
+export const Orders: React.FC<any> = (props: any) => {
   const variables = useData().variables;
   const context = useData().context;
-  const loadingState = useData().loadingState;
+  const api = useEnv().api;
 
   const page = variables.current.page ?? 0;
   const rowsPerPage = variables.current.orders_first ?? variables.current.orders_last ?? 10;
@@ -35,12 +33,12 @@ export const Orders: React.FC<Props> = (props: Props) => {
     }
   }
 
-  const updateOrder = async () => {
+  const updateOrder = () => {
     const authToken = JSON.parse(
       localStorage.getItem('mystique.auth.token') ?? '{}',
     );
-    const response = await fetch(
-      'https://MERKLE.sandbox.api.fluentretail.com/graphql',
+    const response = fetch(
+      api + '/graphql',
       {
         method: 'POST',
         headers: {
@@ -50,14 +48,15 @@ export const Orders: React.FC<Props> = (props: Props) => {
         },
         body: JSON.stringify({
           query:
-            'mutation { updateOrder(input: {id: 6001421 totalPrice: 123456789.0 }) { id ref totalPrice } }',
+            `mutation { updateOrder(input: {id: 6001421 totalPrice: ${Math.random() * 1000} }) { id ref totalPrice } }`,
         }),
       },
     )
       .then((res) => res.json())
-      .catch((error) => console.error('Error', error));
-
-    console.log('response', response);
+      .catch((error) => console.error('Error', error))
+      .finally(() => {
+        variables.setVariables({seed: Math.random()});
+      });
   };
 
   const handleChangePage = (_: unknown, newPage: number) => {
@@ -134,21 +133,53 @@ export const Orders: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <OrderLayout
-      edges={orders.edges}
-      pageInfo={orders.pageInfo}
-      page={page}
-      rowsPerPage={rowsPerPage}
-      disableNextButton={isDisableNextButton}
-      disablePreviousButton={isDisablePreviousButton}
-      onPageChange={handleChangePage}
-      onRowsPerPageChange={handleChangeRowsPerPage}
-      filterRefs={variables.current.filterRefs}
-      filterStatus={variables.current.filterStatus}
-      filterType={variables.current.filterType}
-      resetFilter={resetFilter}
-      submitFilter={submitFilter}
-      updateOrder={updateOrder}
-    />
+    <Stack
+      width='100%'
+      bgcolor={'whitesmoke'}
+      boxShadow={2}
+      borderRadius={1}
+      margin={'0.5em'}
+    >
+      <Stack
+        direction={'row'}
+        justifyContent={'space-between'}
+        justifyItems={'baseline'}
+      >
+        <Filter
+          filterRefs={variables.current.filterRefs}
+          filterStatus={variables.current.filterStatus}
+          filterType={variables.current.filterType}
+          submitFilter={submitFilter}
+          resetFilter={resetFilter}
+        />
+
+        <Stack spacing={1} margin={'auto'}>
+          <Button
+            variant='contained'
+            onClick={updateOrder}
+          >
+            Update
+          </Button>
+        </Stack>
+
+        <Pagination
+          page={page}
+          rowsPerPage={rowsPerPage ?? 10}
+          disableNextButton={isDisableNextButton ?? false}
+          disablePreviousButton={isDisablePreviousButton ?? true}
+          onPageChange={handleChangePage ?? (() => {})}
+          onRowsPerPageChange={handleChangeRowsPerPage ?? (() => {})}
+        />
+      </Stack>
+      <OrderContent orders={orders} />
+      <Pagination
+        page={page}
+        rowsPerPage={rowsPerPage}
+        disableNextButton={isDisableNextButton}
+        disablePreviousButton={isDisablePreviousButton}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </Stack>
   );
 };
