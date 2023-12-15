@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "bundle": "webpack",
-    "i": "./install-with-types.sh",
     "test": "jest --coverage --testPathIgnorePatterns ./build/**",
     "test:storybook": "start-storybook --smoke-test",
     "test:bail": "jest --bail --testPathIgnorePatterns ./build/**",
