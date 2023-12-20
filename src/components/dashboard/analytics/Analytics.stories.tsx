@@ -1,7 +1,7 @@
 import { ComponentMeta } from '@storybook/react';
 import { storyTemplate } from '../../../../.storybook/helpers';
 import { Analytic } from './Analytics';
-import { Orders } from 'components/v2/ordermanagement/OrdersDTO';
+import { Orders } from 'components/order_management/orders/v2/OrdersDTO';
 
 export default {
   title: 'Components/Dashboard/Analytics',

@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import { storyTemplate } from '../../../../.storybook/helpers';
+import { storyTemplate } from '../../../../../.storybook/helpers';
 import { Orders as OrdersDTO, PageInfo } from './OrdersDTO';
 import { Filter, OrderContent, Pagination } from './OrdersLayout';
 

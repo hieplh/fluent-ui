@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { darken, lighten, styled } from '@mui/material/styles';
 import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
-import { currencyFormat } from '../../../utils/NumberUtils';
+import { currencyFormat } from '../../../../utils/NumberUtils';
 import * as LocaleCurrency from 'locale-currency';
 import moment from 'moment';
 import { useI18n } from 'mystique/hooks/useI18n';
