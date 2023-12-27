@@ -6,8 +6,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "bundle": "webpack",
-    "start": "webpack serve --mode development --open --hot --port 3001",
-    "build": "webpack --mode production && jest ./build",
+    "start": "webpack serve --mode production --open --hot",
+    "serve": "webpack serve --mode development --open --hot --port 3001",
+    "build": "webpack --mode production",
     "check-types": "tsc",
     "storybook": "start-storybook -p 6006 -s ./lib",
     "storybook:build": "build-storybook -o dist/_storybook && cp ./lib/*.js ./dist/_storybook",
